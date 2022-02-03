@@ -38,5 +38,6 @@ class PwdGenRepo:
         number = str(random.choice(Constants.numRange))
 
         password = firstPart.capitalize() + specialChar1 + secondPart.capitalize() + specialChar2 + number
+        
 
         return password
