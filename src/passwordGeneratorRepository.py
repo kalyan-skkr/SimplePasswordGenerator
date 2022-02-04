@@ -28,7 +28,7 @@ class PwdGenRepo:
             oneword = True
         return words, oneword
 
-    def genPass(words, oneword, specs):
+    def genPass(words, oneword, specs, pwdlength):
         if oneword:
             firstPart = random.choice(words)
             secondPart = ''
@@ -38,6 +38,7 @@ class PwdGenRepo:
         number = str(random.choice(Constants.numRange))
 
         password = firstPart.capitalize() + specialChar1 + secondPart.capitalize() + specialChar2 + number
-        
+        while len(password) != pwdlength:
+            password += random.choice(specs)
 
         return password

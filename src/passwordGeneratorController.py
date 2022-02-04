@@ -11,8 +11,8 @@ def generate_password():
     pwdLength, reqLetters = PwdGenRepo.set_password_length(request.args)
     words, oneword = PwdGenRepo.set_required_words(reqLetters, PwdGenRepo.words)
 
-    return PwdGenRepo.genPass(words, oneword, Constants.specialChars)
+    return PwdGenRepo.genPass(words, oneword, Constants.specialChars, pwdLength)
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
